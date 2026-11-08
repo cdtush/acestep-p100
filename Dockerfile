@@ -1,6 +1,9 @@
 # Tesla P100 / Pascal compatible CUDA environment
-LABEL org.opencontainers.image.source https://github.com/cdtush/acestep-p100:latest
 FROM nvidia/cuda:12.6.3-runtime-ubuntu22.04
+
+LABEL org.opencontainers.image.source="https://github.com/cdtush/acestep-p100"
+LABEL org.opencontainers.image.description="ACE-Step 1.5 Docker build optimized for NVIDIA Tesla P100 GPUs"
+LABEL org.opencontainers.image.licenses="Apache-2.0"
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONUNBUFFERED=1
@@ -37,9 +40,13 @@ WORKDIR /app
 
 # Clone ACE-Step 1.5
 RUN git clone https://github.com/ACE-Step/ACE-Step-1.5.git .
-RUN git fetch --depth=1 origin \
-    refs/pull/1352/head:refs/heads/fp16-lyric-fix \
-    && git checkout fp16-lyric-fix
+
+
+# Pin the tested Pascal FP16 lyric encoder fix
+ARG ACESTEP_FIX_COMMIT=c751457800baeb159c7fa0d3a78fbde56626b31b
+
+RUN git fetch --depth=1 origin ${ACESTEP_FIX_COMMIT} \
+    && git checkout --detach ${ACESTEP_FIX_COMMIT}
 # Install a PyTorch version that retains Tesla P100 support
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel
 
