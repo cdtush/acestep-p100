@@ -29,7 +29,7 @@ Tested on:
 
 docker build --no-cache -t acestep-p100 .
 
-##To run
+## To run
 docker run -d \
   --name acestep \
   --gpus all \
