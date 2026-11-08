@@ -1,8 +1,8 @@
 # Tesla P100 / Pascal compatible CUDA environment
 FROM nvidia/cuda:12.6.3-runtime-ubuntu22.04
 
-LABEL org.opencontainers.image.source="https://github.com/cdtush/acestep-p100"
-LABEL org.opencontainers.image.description="ACE-Step 1.5 Docker build optimized for NVIDIA Tesla P100 GPUs"
+LABEL org.opencontainers.image.source="https://github.com/cdtush/acestep-p100" \
+      org.opencontainers.image.description="ACE-Step 1.5 Docker build optimized for NVIDIA Tesla P100 GPUs"
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 
 ENV DEBIAN_FRONTEND=noninteractive
