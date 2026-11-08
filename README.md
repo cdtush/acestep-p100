@@ -50,7 +50,7 @@ Available at:
 https://github.com/cdtush?tab=packages
 
 ## Disclaimer
-This is a community-maintained compatibility build.
+This is a community-maintained compatibility build. (While I made it work, it took me many days, and I am probably not gonna be great at fixing issues.)
 It is not an official ACE-Step release.
 
 See the upstream project for its source code and licensing:
