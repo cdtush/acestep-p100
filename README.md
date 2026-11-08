@@ -39,3 +39,21 @@ docker run -d \
   -v acestep-models:/root/.cache/huggingface \
   -v acestep-outputs:/app/outputs \
   ghcr.io/cdtush/acestep-p100:latest
+
+## Access the interface at:
+
+http://localhost:7860
+
+## Prebuilt Image
+Available at:
+
+https://github.com/cdtush?tab=packages
+
+## Disclaimer
+This is a community-maintained compatibility build.
+It is not an official ACE-Step release.
+
+See the upstream project for its source code and licensing:
+
+https://github.com/ACE-Step/ACE-Step-1.5
+EOF
