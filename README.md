@@ -27,10 +27,10 @@ Tested on:
 
 ## Build
 
-```bash
-docker build -t acestep-p100 .
+docker build --no-cache -t acestep-p100 .
 
-To run docker run -d \
+##To run
+docker run -d \
   --name acestep \
   --gpus all \
   --restart unless-stopped \
